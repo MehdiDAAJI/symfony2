@@ -6,9 +6,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+#[Route('/program')]
 class ProgramController extends AbstractController
 {
-    #[Route('/program/', name: 'program_index')]
+    #[Route('/', name: 'program_index')]
     public function index(): Response
     {
         return $this->render('program/index.html.twig', [
@@ -17,7 +18,7 @@ class ProgramController extends AbstractController
     }
 
     #[Route(
-        '/program/{id}',
+        '/{id}',
         methods: ['GET'],
         condition: "params['id'] >0",
         requirements: ['id' => '\d+'],
