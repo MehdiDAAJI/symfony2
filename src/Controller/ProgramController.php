@@ -2,14 +2,15 @@
 // src/Controller/ProgramController.php
 namespace App\Controller;
 
+use App\Entity\Program;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/program')]
+#[Route('/program', name: 'program_')]
 class ProgramController extends AbstractController
 {
-    #[Route('/', name: 'program_index')]
+    #[Route('/', name: 'index')]
     public function index(): Response
     {
         return $this->render('program/index.html.twig', [
@@ -22,7 +23,7 @@ class ProgramController extends AbstractController
         methods: ['GET'],
         condition: "params['id'] >0",
         requirements: ['id' => '\d+'],
-        name: 'program_detail',
+        name: 'show',
     )]
     public function show(int $id): Response
     {
