@@ -15,10 +15,10 @@ class Program
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $tilte = null;
+    private ?string $title = null;
 
     #[ORM\Column(type: Types::TEXT)]
-    private ?string $synospis = null;
+    private ?string $synopsis = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $poster = null;
@@ -32,26 +32,26 @@ class Program
         return $this->id;
     }
 
-    public function getTilte(): ?string
+    public function getTitle(): ?string
     {
-        return $this->tilte;
+        return $this->title;
     }
 
-    public function setTilte(string $tilte): self
+    public function setTitle(string $title): self
     {
-        $this->tilte = $tilte;
+        $this->title = $title;
 
         return $this;
     }
 
-    public function getSynospis(): ?string
+    public function getSynopsis(): ?string
     {
-        return $this->synospis;
+        return $this->synopsis;
     }
 
-    public function setSynospis(string $synospis): self
+    public function setSynopsis(string $synopsis): self
     {
-        $this->synospis = $synospis;
+        $this->synopsis = $synopsis;
 
         return $this;
     }
